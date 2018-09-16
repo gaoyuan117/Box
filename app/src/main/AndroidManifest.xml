@@ -156,7 +156,8 @@
         <activity
             android:name=".ui.PlayTvActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".ui.CollectActivity"></activity>
+        <activity android:name=".ui.CollectActivity" />
+        <activity android:name=".ui.AvDetailActivity"></activity>
     </application>
 
 </manifest>

@@ -14,6 +14,7 @@ import com.xzwzz.orange.api.http.RetrofitClient;
 import com.xzwzz.orange.api.http.RxUtils;
 import com.xzwzz.orange.base.BaseActivity;
 import com.xzwzz.orange.bean.ConfigBean;
+import com.xzwzz.orange.bean.NovelTermBean;
 import com.xzwzz.orange.bean.QqBean;
 import com.xzwzz.orange.glide.GlideApp;
 import com.xzwzz.orange.utils.LoginUtils;
@@ -41,9 +42,22 @@ public class SplashActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-
         splah();
+        getNovelTerm();
+    }
 
+    //获取小说分类
+    private void getNovelTerm() {
+
+        RetrofitClient.getInstance().createApi().novelTerm("Home.VideoTerm").compose(RxUtils.io_main())
+                .subscribe(new BaseListObserver<NovelTermBean>() {
+                    @Override
+                    protected void onHandleSuccess(List<NovelTermBean> list) {
+                        if (list == null || list.size() == 0) return;
+                        AppContext.novelTermList.clear();
+                        AppContext.novelTermList.addAll(list);
+                    }
+                });
     }
 
     private void splah() {

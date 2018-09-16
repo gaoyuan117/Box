@@ -86,8 +86,8 @@ public class HomeActivity extends BaseActivity implements OnTabChangedListner {
 
         mList.add(new HomeFragment());
 //        mList.add(new YunBoFragment());
+        mList.add(new AvFragment());
         mList.add(new YingFragment());
-        mList.add(new YunSearchFragment());
         mList.add(new MineFragment());
         adapter = new ViewPagerAdapter(getSupportFragmentManager(), this, mList);
         viewPager.setAdapter(adapter);
@@ -108,7 +108,6 @@ public class HomeActivity extends BaseActivity implements OnTabChangedListner {
 
         init();
         check();
-        getNovelTerm();
 
         LoginUtils.tokenIsOutTime(new BaseListObserver<BaseBean>() {
             @Override
@@ -253,20 +252,5 @@ public class HomeActivity extends BaseActivity implements OnTabChangedListner {
                     }
                 });
     }
-
-    //获取小说分类
-    private void getNovelTerm() {
-
-        RetrofitClient.getInstance().createApi().novelTerm("Home.novelTerm").compose(RxUtils.io_main())
-                .subscribe(new BaseListObserver<NovelTermBean>() {
-                    @Override
-                    protected void onHandleSuccess(List<NovelTermBean> list) {
-                        if (list == null || list.size() == 0) return;
-                        AppContext.novelTermList.clear();
-                        AppContext.novelTermList.addAll(list);
-                    }
-                });
-    }
-
 
 }

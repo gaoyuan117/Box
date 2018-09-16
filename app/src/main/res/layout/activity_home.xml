@@ -35,6 +35,15 @@
             app:textColorNormal="#a4a4a4"
             app:textColorSelected="@color/main_color" />
 
+        <com.xzwzz.orange.view.AlphaTabView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:tabIconNormal="@mipmap/yunbo_false"
+            app:tabIconSelected="@mipmap/yunbo_true"
+            app:tabText="AV区"
+            app:textColorNormal="#a4a4a4"
+            app:textColorSelected="@color/main_color" />
 
         <com.xzwzz.orange.view.AlphaTabView
             android:layout_width="40dp"
@@ -43,16 +52,6 @@
             app:tabIconNormal="@mipmap/yingshi_false"
             app:tabIconSelected="@mipmap/yingshi_true"
             app:tabText="影视"
-            app:textColorNormal="#a4a4a4"
-            app:textColorSelected="@color/main_color" />
-
-        <com.xzwzz.orange.view.AlphaTabView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            app:tabIconNormal="@mipmap/yunbo_false"
-            app:tabIconSelected="@mipmap/yunbo_true"
-            app:tabText="云播"
             app:textColorNormal="#a4a4a4"
             app:textColorSelected="@color/main_color" />
 

@@ -5,20 +5,16 @@ import android.content.Intent;
 import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.ActivityUtils;
 import com.blankj.utilcode.util.SizeUtils;
-import com.blankj.utilcode.util.ToastUtils;
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.xzwzz.orange.AppContext;
 import com.xzwzz.orange.R;
@@ -28,22 +24,15 @@ import com.xzwzz.orange.api.http.RxUtils;
 import com.xzwzz.orange.base.BaseFragment;
 import com.xzwzz.orange.bean.AdBean;
 import com.xzwzz.orange.bean.HotBean;
-import com.xzwzz.orange.bean.PlatformBean;
 import com.xzwzz.orange.bean.PlatformBean1;
 import com.xzwzz.orange.bean.PlatformBean2;
-import com.xzwzz.orange.glide.GlideApp;
 import com.xzwzz.orange.module.live.LiveChannel2Activity;
 import com.xzwzz.orange.module.live.LiveChannelActivity;
-import com.xzwzz.orange.module.live.LiveModuleActivity;
-import com.xzwzz.orange.module.live.adapter.LiveModule2Adapter;
 import com.xzwzz.orange.module.live.adapter.LiveModuleAdapter;
 import com.xzwzz.orange.ui.CollectActivity;
-import com.xzwzz.orange.ui.LiveModule2Activity;
 import com.xzwzz.orange.ui.login.LoginActivity;
 import com.xzwzz.orange.utils.MyImageLoader;
 import com.xzwzz.orange.utils.SharePrefUtil;
-import com.xzwzz.orange.utils.StatusBarUtil;
-import com.xzwzz.orange.widget.ViewStatusManager;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -52,7 +41,6 @@ import com.youth.banner.listener.OnBannerClickListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.bingoogolapple.bgabanner.BGABanner;
 import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
@@ -117,7 +105,7 @@ public class HomeFragment extends BaseFragment implements BaseQuickAdapter.OnIte
         mAdapter.addHeaderView(headView);
     }
 
-    private void toCollectActivity(){
+    private void toCollectActivity() {
         if (!AppContext.getInstance().isLogin()) {
             ActivityUtils.startActivity(LoginActivity.class);
             return;
@@ -130,8 +118,8 @@ public class HomeFragment extends BaseFragment implements BaseQuickAdapter.OnIte
         getAd();
         getBanner();
         String url = SharePrefUtil.getString("url", "");
-        Log.e("gy","链接："+url);
-        if (SharePrefUtil.getInt("type",0) == 1) {
+        Log.e("gy", "链接：" + url);
+        if (SharePrefUtil.getInt("type", 0) == 1) {
             getList();
         } else {
             getList2();
@@ -224,7 +212,7 @@ public class HomeFragment extends BaseFragment implements BaseQuickAdapter.OnIte
     //获取直播列表
     private void getList() {
         String url = SharePrefUtil.getString("url", "");
-        Log.e("gy","链接："+url);
+        Log.e("gy", "链接：" + url);
         if (TextUtils.isEmpty(url)) return;
         RetrofitClient.getInstance().createApi().getChannelList1(url)
                 .compose(RxUtils.io_main())
@@ -263,7 +251,7 @@ public class HomeFragment extends BaseFragment implements BaseQuickAdapter.OnIte
     @SuppressLint("CheckResult")
     private void getList2() {
         String url = SharePrefUtil.getString("url", "");
-        Log.e("gy","链接："+url);
+        Log.e("gy", "链接：" + url);
         if (TextUtils.isEmpty(url)) return;
         RetrofitClient.getInstance().createApi().getChannelList2(url)
                 .compose(RxUtils.io_main())
@@ -298,9 +286,9 @@ public class HomeFragment extends BaseFragment implements BaseQuickAdapter.OnIte
 
     @Override
     public void OnBannerClick(int position) {
-        if (TextUtils.isEmpty(hotBeans.get(position-1).slide_url)) return;
+        if (TextUtils.isEmpty(hotBeans.get(position - 1).slide_url)) return;
 
-        Uri uri = Uri.parse(hotBeans.get(position-1).slide_url);
+        Uri uri = Uri.parse(hotBeans.get(position - 1).slide_url);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }

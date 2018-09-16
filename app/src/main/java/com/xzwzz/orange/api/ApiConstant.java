@@ -3,6 +3,8 @@ package com.xzwzz.orange.api;
 import com.xzwzz.orange.api.http.HttpArray;
 import com.xzwzz.orange.api.http.HttpResult;
 import com.xzwzz.orange.bean.AdBean;
+import com.xzwzz.orange.bean.AdListBean;
+import com.xzwzz.orange.bean.AvVideoListBean;
 import com.xzwzz.orange.bean.BalanceBean;
 import com.xzwzz.orange.bean.BaseBean;
 import com.xzwzz.orange.bean.BookBean;
@@ -12,6 +14,7 @@ import com.xzwzz.orange.bean.ChannelDataBean;
 import com.xzwzz.orange.bean.ChannelDataBean1;
 import com.xzwzz.orange.bean.ChatBean;
 import com.xzwzz.orange.bean.ConfigBean;
+import com.xzwzz.orange.bean.DiamondAdBean;
 import com.xzwzz.orange.bean.HotBean;
 import com.xzwzz.orange.bean.HttpPaybean;
 import com.xzwzz.orange.bean.InvitationBean;
@@ -30,6 +33,7 @@ import com.xzwzz.orange.bean.UpdatePhotoBean;
 import com.xzwzz.orange.bean.UserBean;
 import com.xzwzz.orange.bean.UserInfoBean;
 import com.xzwzz.orange.bean.VideoBean;
+import com.xzwzz.orange.bean.VideoDetailBean;
 import com.xzwzz.orange.bean.VideoListBean;
 import com.xzwzz.orange.bean.VipBean;
 import com.xzwzz.orange.bean.WallperBean;
@@ -289,4 +293,27 @@ public interface ApiConstant {
     @FormUrlEncoded
     @POST("/api/public/")
     Observable<ChatBean> getChat(@Field("service") String service);
+
+    @FormUrlEncoded
+    @POST("/api/public/")
+    Observable<HttpArray<AvVideoListBean>> videoList(@Field("service") String service, @Field("id") String id);
+
+    //service=Home.adsList
+    @FormUrlEncoded
+    @POST("/api/public/")
+    Observable<HttpArray<AdListBean>> adsList(@Field("service") String service);
+
+    @FormUrlEncoded
+    @POST("/api/public/")
+    Observable<HttpResult<VideoDetailBean>> videoDetail(@Field("service") String service, @Field("uid") String uid, @Field("id") String id);
+
+    //service=Home.avList
+    @FormUrlEncoded
+    @POST("/api/public/")
+    Observable<HttpResult<DiamondAdBean>> diamondAv(@Field("service") String service);
+
+    //getfreenum
+    @FormUrlEncoded
+    @POST("/api/public/")
+    Observable<HttpResult> getfreenum(@Field("service") String service, @Field("uid") String uid, @Field("type") String type);
 }
