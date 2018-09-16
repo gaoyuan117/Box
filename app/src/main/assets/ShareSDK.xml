@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DevInfor>
+
+
+
+    <QZone
+        Id="3"
+        SortId="3"
+		AppId="1106873795"
+		AppKey="6ZoWh6XZ10YA0B2f"
+		BypassApproval="false"
+        Enable="true" />
+
+
+	<QQ
+        Id="7"
+        SortId="7"
+		AppId="1106873795"
+		AppKey="6ZoWh6XZ10YA0B2f"
+		BypassApproval="false"
+        ShareByAppClient="true"
+        Enable="true" />
+
+
+
+</DevInfor>

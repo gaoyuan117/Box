@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.youth.banner.Banner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:image_scale_type="center_crop"
+        app:indicator_height="8dp"
+        app:indicator_margin="6dp"
+        app:indicator_width="8dp" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@+id/slideshowView"
+        android:background="#50000000"
+        android:drawableLeft="@mipmap/gonggao"
+        android:drawablePadding="10dp"
+        android:ellipsize="marquee"
+        android:gravity="center_vertical"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:paddingLeft="14dp"
+        android:singleLine="true"
+        android:textColor="@color/white" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_below="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:background="#f0f1f3"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingRight="12dp"
+        android:paddingLeft="12dp"
+        android:layout_below="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="2.5dp"
+            android:layout_height="13dp"
+            android:background="@drawable/shape_line"
+            android:layout_marginRight="5dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:text="直播机构"
+            />
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textSize="10sp"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp"
+            android:background="@drawable/broder_main_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="持续增加"
+            />
+
+        <TextView
+            android:id="@+id/tv_home_num"
+            android:textColor="#a4a4a4"
+            android:textSize="12sp"
+            android:gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="共0个"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

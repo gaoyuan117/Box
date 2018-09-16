@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/qrcode_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="10dp"
+        android:src="@mipmap/guanbi_room" />
+
+    <ImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/iv_showqrcode"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_below="@id/qrcode_close"
+        android:src="@color/color_darker_gray" />
+
+
+    <TextView
+        android:id="@+id/tv_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_showqrcode"
+        android:padding="10dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:textSize="16sp"
+        android:text="邀请码:" />
+
+
+</RelativeLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:orientation="vertical"
+    android:paddingTop="20dp"
+    tools:context=".ui.UserInfoDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="@drawable/broder_layout_bg"
+        android:divider="@drawable/line"
+        android:dividerPadding="2dp"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        >
+
+        <com.xzwzz.orange.widget.LineControlView
+            android:id="@+id/cv_avatar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:canNavition="true"
+            app:hasContentIcon="true"
+            app:title="头像"
+            />
+
+        <com.xzwzz.orange.widget.LineControlView
+            android:id="@+id/cv_username"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:canNavition="true"
+            app:title="昵称"
+            />
+
+        <com.xzwzz.orange.widget.LineControlView
+            android:id="@+id/cv_signature"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:canNavition="true"
+            app:title="签名"
+            />
+
+        <com.xzwzz.orange.widget.LineControlView
+            android:id="@+id/cv_birthday"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:canNavition="false"
+            app:title="生日"
+            />
+
+        <com.xzwzz.orange.widget.LineControlView
+            android:id="@+id/cv_sex"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            app:canNavition="true"
+            app:title="性别"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_exitLogin"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:background="@mipmap/ic_btn_background"
+        android:text="退出登录"
+        android:textColor="@android:color/white"/>
+</LinearLayout>

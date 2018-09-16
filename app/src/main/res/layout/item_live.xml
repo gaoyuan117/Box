@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/iv_category"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/tv_category_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_category"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text="标题"
+        android:textColor="@color/text_black2_color"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_category_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_category_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/live_num_background"
+        android:drawableLeft="@mipmap/ship"
+        android:drawablePadding="4dp"
+        android:gravity="center"
+        android:paddingBottom="3dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:paddingTop="3dp"
+        android:text="26"
+        android:textColor="@color/white"
+        android:textSize="8sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+</RelativeLayout>

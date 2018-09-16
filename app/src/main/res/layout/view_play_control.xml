@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/live_info_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="1dp"
+            android:paddingRight="20dp"
+            android:paddingTop="1dp">
+
+            <ImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_live_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="直播Live"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/tv_live_num"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1dp"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/img_collect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="15dp"
+            android:padding="15dp"
+            android:src="@mipmap/collect" />
+
+
+        <ImageView
+            android:id="@+id/loading_View"
+            android:layout_width="123dp"
+            android:layout_height="123dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/loading_live" />
+
+
+
+        <RelativeLayout
+            android:id="@+id/layout_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingBottom="10dp"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:paddingTop="40dp">
+
+            <ImageView
+                android:id="@+id/ijk_jubao"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@mipmap/jubao" />
+
+            <ImageView
+                android:id="@+id/ijk_guanbi"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@mipmap/guanbi" />
+
+            <ImageView
+                android:id="@+id/ijk_pingbi"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/jinzhi" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_alignTop="@+id/layout_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:padding="4dp"
+                android:textSize="13sp"
+                android:background="@drawable/broder_layout_bg"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:hint="请输入弹幕"
+                android:id="@+id/et_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:id="@+id/tv_send"
+                android:layout_marginLeft="10dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发送"
+                android:textSize="13sp"
+                android:background="@drawable/broder_main_color"
+                />
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="110dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="100dp" />
+
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/tv_tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="160dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="100dp"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+</merge>

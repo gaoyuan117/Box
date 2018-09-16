@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.xzwzz.orange.widget.NoScrollViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f1f1f1"/>
+
+    <com.xzwzz.orange.view.AlphaTabsIndicator
+        android:id="@+id/alphaIndicator"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/white"
+        android:paddingTop="7dp"
+        android:orientation="horizontal">
+
+        <com.xzwzz.orange.view.AlphaTabView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:tabIconNormal="@mipmap/zhibo_false"
+            app:tabIconSelected="@mipmap/zhibo_true"
+            app:tabText="直播"
+            app:textColorNormal="#a4a4a4"
+            app:textColorSelected="@color/main_color" />
+
+
+        <com.xzwzz.orange.view.AlphaTabView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:tabIconNormal="@mipmap/yingshi_false"
+            app:tabIconSelected="@mipmap/yingshi_true"
+            app:tabText="影视"
+            app:textColorNormal="#a4a4a4"
+            app:textColorSelected="@color/main_color" />
+
+        <com.xzwzz.orange.view.AlphaTabView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:tabIconNormal="@mipmap/yunbo_false"
+            app:tabIconSelected="@mipmap/yunbo_true"
+            app:tabText="云播"
+            app:textColorNormal="#a4a4a4"
+            app:textColorSelected="@color/main_color" />
+
+        <com.xzwzz.orange.view.AlphaTabView
+            android:id="@+id/tab_mine"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            app:tabIconNormal="@mipmap/wode_false"
+            app:tabIconSelected="@mipmap/wode_true"
+            app:tabText="我的"
+            app:textColorNormal="#a4a4a4"
+            app:textColorSelected="@color/main_color" />
+
+    </com.xzwzz.orange.view.AlphaTabsIndicator>
+
+</LinearLayout>

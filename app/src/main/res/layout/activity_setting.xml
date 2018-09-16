@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="15dp"
+    tools:context=".ui.SettingActivity">
+
+    <com.xzwzz.orange.widget.LineControlView
+        android:id="@+id/reset_setting"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        app:canNavition="true"
+        app:title="重置密码"
+        />
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0.5dp"-->
+    <!--android:background="@color/text_gray3"-->
+    <!--/>-->
+
+    <com.xzwzz.orange.widget.LineControlView
+        android:id="@+id/checklastet_setting"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white"
+        app:canNavition="true"
+        app:title="检查更新"
+        />
+
+    <Button
+        android:id="@+id/btn_exitLogin"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/ic_btn_background"
+        android:text="退出登录"
+        android:textColor="@android:color/white"/>
+</LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="280dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_gravity="center_vertical"
+        android:background="@mipmap/beijing2"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/dialog_freetime_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|top"
+            android:background="@android:color/transparent"
+            android:padding="8dp"
+            android:src="@mipmap/icon_live_close" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="欢迎您光临体验"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:text="获取会员继续观看"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@drawable/layout_bg_freetimeout"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/dialog_freetime_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:padding="20dp"
+            android:text=""
+            android:textSize="16sp" />
+
+        <!--<Button-->
+        <!--android:id="@+id/dialog_freetime_invitate"-->
+        <!--style="?android:attr/borderlessButtonStyle"-->
+        <!--android:layout_width="210dp"-->
+        <!--android:layout_height="45dp"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="20dp"-->
+        <!--android:background="@drawable/btn_circular_freetimeout"-->
+        <!--android:text="邀请好友0/6"-->
+        <!--android:textColor="#FAA9C9"-->
+        <!--android:visibility="gone"/>-->
+
+        <Button
+            android:id="@+id/dialog_freetime_buyvip"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="210dp"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@mipmap/ic_btn_background"
+            android:text="充值会员"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

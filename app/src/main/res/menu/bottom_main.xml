@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/btn_bottom_main"
+        android:icon="@mipmap/shouye_weixuanzhong"
+        android:title="首页"
+        />
+    <item
+        android:id="@+id/btn_bottom_promotion"
+        android:icon="@mipmap/yunbo_false"
+        android:title="云播"
+        />
+    <item
+        android:id="@+id/btn_bottom_mine"
+        android:icon="@mipmap/wode_weixuanzhong"
+        android:title="我的"
+        />
+</menu>

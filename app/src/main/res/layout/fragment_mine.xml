@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f1f3"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ll_information"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@mipmap/mine_bg"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="个人中心"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
+
+    </LinearLayout>
+
+    <include layout="@layout/view_info_detail_data" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="#f0f1f3"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:divider="@drawable/line"
+            android:dividerPadding="1dp"
+            android:orientation="vertical"
+            android:showDividers="middle">
+
+            <com.xzwzz.orange.widget.LineControlView
+                android:visibility="gone"
+                android:id="@+id/qrcode_mine"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                app:canNavition="false"
+                app:iconRes="@mipmap/ic_qrcode"
+                app:title="二维码分享" />
+
+            <com.xzwzz.orange.widget.LineControlView
+                android:id="@+id/wallet_mine"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:canNavition="false"
+                app:iconRes="@mipmap/ic_gold"
+                app:title="我的分享" />
+
+
+            <com.xzwzz.orange.widget.LineControlView
+                android:id="@+id/vip_mine"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                app:canNavition="true"
+                app:iconRes="@mipmap/huiyuan"
+                app:title="会员续费" />
+
+            <com.xzwzz.orange.widget.LineControlView
+                android:id="@+id/tuijian_mine"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:visibility="visible"
+                app:canNavition="true"
+                app:iconRes="@mipmap/tuijian"
+                app:title="推荐好友" />
+
+            <com.xzwzz.orange.widget.LineControlView
+                android:id="@+id/gotmony_mine"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:canNavition="false"
+                app:iconRes="@mipmap/ic_gotmoney"
+                app:title="我的收益" />
+
+            <com.xzwzz.orange.widget.LineControlView
+                android:visibility="gone"
+                android:id="@+id/kefu"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                app:canNavition="false"
+                app:iconRes="@mipmap/kefu"
+                app:title="在线客服" />
+
+            <com.xzwzz.orange.widget.LineControlView
+                android:visibility="gone"
+                android:id="@+id/uimodule_item_main_list_tv"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                app:canNavition="false"
+                app:iconRes="@mipmap/ic_setting"
+                app:title="设置" />
+
+            <com.xzwzz.orange.widget.LineControlView
+                android:id="@+id/change_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:background="@color/white"
+                app:canNavition="true"
+                app:iconRes="@mipmap/change"
+                app:title="修改密码" />
+
+
+        </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/btn_exitLogin"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_gravity="center"
+        android:layout_margin="42dp"
+        android:background="@drawable/broder_main_color"
+        android:text="退出登录"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

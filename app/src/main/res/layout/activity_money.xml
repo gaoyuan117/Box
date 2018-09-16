@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    android:orientation="vertical"
+    tools:context=".ui.UserProfitActivity">
+
+    <include layout="@layout/view_moneyinfo_header"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="10dp"
+        android:background="#F7F7F7"
+        android:gravity="center_vertical"
+        android:text="填写信息"
+        android:textSize="16sp"
+        android:typeface="serif"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/input_border_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        >
+
+        <TextView
+            android:layout_width="81dp"
+            android:layout_height="match_parent"
+            android:gravity="left|center_vertical"
+            android:text="姓名"
+            android:textColor="#000"
+            android:textSize="16sp"
+            />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="请输入姓名"
+            android:inputType="text"
+            android:maxLength="16"
+            android:textColorHint="@color/text_gray1"
+            android:textSize="16sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/input_border_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        >
+
+        <TextView
+            android:layout_width="81dp"
+            android:layout_height="match_parent"
+            android:gravity="left|center_vertical"
+            android:text="支付宝帐号"
+            android:textColor="#000"
+            android:textSize="16sp"
+            />
+
+        <EditText
+            android:id="@+id/et_aliaccount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="请输入支付宝帐号"
+            android:textColorHint="@color/text_gray1"
+            android:textSize="16sp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/input_border_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        >
+
+        <TextView
+            android:layout_width="81dp"
+            android:layout_height="match_parent"
+            android:gravity="left|center_vertical"
+            android:text="提现金额"
+            android:textColor="#000"
+            android:textSize="16sp"
+            />
+
+        <EditText
+            android:id="@+id/et_money"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="输入要提现的金额"
+            android:inputType="number"
+            android:maxLength="16"
+            android:textColorHint="@color/text_gray1"
+            android:textSize="16sp"
+            />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#F7F7F7"
+        android:gravity="center_vertical"
+        android:lineSpacingExtra="3dp"
+        android:text="注意：请检查输入的支付宝帐号，姓名是否正确，否则打款可能不成功"
+        android:textSize="14sp"
+        android:typeface="serif"
+        />
+
+    <Button
+        android:id="@+id/btn_confirm"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@id/ll_input"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@mipmap/ic_btn_background"
+        android:text="提现"
+        android:textColor="@android:color/white"/>
+</LinearLayout>

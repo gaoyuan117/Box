@@ -1,0 +1,86 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    defaultConfig {
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        renderscriptSupportModeEnabled true
+        ndk {
+            abiFilters "armeabi"
+        }
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'xzwzz'
+            keyPassword '123456'
+            storeFile file('../keystore/sweetBox.jks')
+            storePassword '123456'
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            shrinkResources true
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            shrinkResources true
+        }
+    }
+    useLibrary 'org.apache.http.legacy'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    allprojects {
+        repositories {
+            jcenter()
+        }
+        repositories {
+            maven { url "https://jitpack.io" }
+            mavenCentral()
+        }
+    }
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+
+    greendao {
+        //版本号，升级时可配置
+        schemaVersion 1
+    }
+
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation rootProject.ext.retrofitLibs
+    implementation rootProject.ext.supportLibs
+    implementation rootProject.ext.rxJavaLibs
+    implementation rootProject.ext.glideLibs
+    implementation rootProject.ext.otherLibs
+    annotationProcessor rootProject.ext.annotationProcessorLibs
+    implementation project(path: ':ijkplayer')
+    implementation files('libs/alipaySdk-20161129.jar')
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:1.1.6'
+    implementation project(':ijkplayer')
+    implementation 'com.youth.banner:banner:1.4.8'
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+    implementation files('libs/tbs_sdk_thirdapp_v3.6.0.1234_43608_sharewithdownload_withoutGame_obfs_20180510_111111.jar')
+    implementation 'org.greenrobot:greendao:3.2.0'
+}
