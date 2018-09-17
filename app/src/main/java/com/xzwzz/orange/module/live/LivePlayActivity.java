@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.ToastUtils;
+import com.bumptech.glide.Glide;
 import com.xzwzz.orange.AppContext;
 import com.xzwzz.orange.R;
 import com.xzwzz.orange.api.http.BaseListObserver;
@@ -75,6 +77,11 @@ public class LivePlayActivity extends BaseActivity implements View.OnClickListen
     private TextView tvSend;
     private InputMethodManager imm;
 
+    private ImageView imageView;
+    private String textAd = AppContext.textAdBean.getZb_ad(), gifAd = AppContext.textAdBean.getZb_gif();
+    private String[] textSplit;
+    private String[] gifSplit;
+
 
     @Override
     protected boolean hasActionBar() {
@@ -98,10 +105,20 @@ public class LivePlayActivity extends BaseActivity implements View.OnClickListen
         mIvAvatar = findViewById(R.id.iv_avatar);
         loadingView = findViewById(R.id.loading_View);
         layout = findViewById(R.id.layout);
-        tvTips = findViewById(R.id.tv_tips);
+        tvTips = findViewById(R.id.tv_tip1);
         tvSend = findViewById(R.id.tv_send);
         editText = findViewById(R.id.et_input);
         findViewById(R.id.img_collect).setOnClickListener(this);
+
+        imageView = findViewById(R.id.imageView);
+        tvTips.setOnClickListener(this);
+
+        textSplit = textAd.replaceAll("，", ",").split(",");
+        tvTips.setText(textSplit[0]);
+
+        gifSplit = gifAd.replaceAll("，", ",").split(",");
+        Glide.with(this).load(gifSplit[0]).into(imageView);
+        imageView.setOnClickListener(this);
 
         list.add("系统消息:本平台已接入聊天室实时信息流,欢迎收看");
 
@@ -271,19 +288,33 @@ public class LivePlayActivity extends BaseActivity implements View.OnClickListen
                 if (mIjkJubao.getVisibility() == View.VISIBLE || mIjkGuanbi.getVisibility() == View.VISIBLE) {
                     mIjkJubao.setVisibility(View.GONE);
                     mIjkGuanbi.setVisibility(View.GONE);
-                    tvTips.setVisibility(View.GONE);
                     layout.setVisibility(View.GONE);
 
                 } else if (mIjkJubao.getVisibility() == View.GONE || mIjkGuanbi.getVisibility() == View.GONE) {
                     mIjkJubao.setVisibility(View.VISIBLE);
                     mIjkGuanbi.setVisibility(View.VISIBLE);
-                    tvTips.setVisibility(View.VISIBLE);
                     layout.setVisibility(View.VISIBLE);
                 }
+                break;
+
+            case R.id.imageView:
+                toBrower(gifSplit[1]);
+                break;
+            case R.id.tv_tip1:
+                toBrower(textSplit[1]);
                 break;
             default:
                 break;
         }
+    }
+
+    private void toBrower(String url) {
+        if (!url.contains("http")) return;
+        Intent intent = new Intent();
+        intent.setAction("android.intent.action.VIEW");
+        Uri content_url = Uri.parse(url);
+        intent.setData(content_url);
+        startActivity(intent);
     }
 
     private void getList() {

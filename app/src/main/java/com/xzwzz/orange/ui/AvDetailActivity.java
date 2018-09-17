@@ -1,10 +1,7 @@
 package com.xzwzz.orange.ui;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -22,9 +19,9 @@ import com.xzwzz.orange.api.http.BaseObjObserver;
 import com.xzwzz.orange.api.http.RetrofitClient;
 import com.xzwzz.orange.api.http.RxUtils;
 import com.xzwzz.orange.base.BaseActivity;
-import com.xzwzz.orange.bean.DiamondAdBean;
 import com.xzwzz.orange.bean.VideoDetailBean;
 import com.xzwzz.orange.bean.VideoListBean;
+import com.xzwzz.orange.module.video.VideoPlayActivity;
 import com.xzwzz.orange.ui.adapter.AvDetailAdapter;
 import com.xzwzz.orange.utils.GlideUtils;
 
@@ -45,13 +42,11 @@ public class AvDetailActivity extends BaseActivity implements BaseQuickAdapter.O
     private String id;
     private List<VideoDetailBean.ListBean> list = new ArrayList<>();
     private AvDetailAdapter adapter;
-    private DiamondAdBean adBean;
-    private boolean vip = false;
     private VideoDetailBean detailBean;
 
     @Override
     protected boolean hasActionBar() {
-        return true;
+        return false;
     }
 
     @Override
@@ -62,12 +57,11 @@ public class AvDetailActivity extends BaseActivity implements BaseQuickAdapter.O
     @Override
     protected void initView() {
         super.initView();
-        String title = getIntent().getStringExtra("title");
         id = getIntent().getStringExtra("id");
-        if (title.length() > 8) {
-            title = title.substring(0, 8);
-        }
-        setToolbar(title, true);
+        findViewById(R.id.img_back).setOnClickListener(view -> finish());
+        TextView title = findViewById(R.id.tv_title);
+
+        title.setText("视频详情");
 
         layoutTips = findViewById(R.id.layout_tips);
         videoImg = findViewById(R.id.img_diamond);
@@ -81,7 +75,7 @@ public class AvDetailActivity extends BaseActivity implements BaseQuickAdapter.O
         recyclerView = findViewById(R.id.recycler);
         layoutTips.setVisibility(View.GONE);
         imgAd.setVisibility(View.GONE);
-        tvWatch.setVisibility(View.VISIBLE);
+        tvWatch.setVisibility(View.GONE);
 
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2) {
             @Override
@@ -96,14 +90,12 @@ public class AvDetailActivity extends BaseActivity implements BaseQuickAdapter.O
 //        ad();
         videoImg.setOnClickListener(v -> toActivity());
         findViewById(R.id.close).setOnClickListener(v -> layoutTips.setVisibility(View.GONE));
-        imgAd.setOnClickListener(v -> toBrower());
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         video();
-        getFreeNum();
     }
 
     @Override
@@ -137,54 +129,14 @@ public class AvDetailActivity extends BaseActivity implements BaseQuickAdapter.O
                 });
     }
 
-    private void ad() {
-        RetrofitClient.getInstance().createApi().diamondAv("Home.avneiye")
-                .compose(RxUtils.io_main())
-                .subscribe(new BaseObjObserver<DiamondAdBean>() {
-                    @Override
-                    protected void onHandleSuccess(DiamondAdBean bean) {
-                        imgAd.setVisibility(View.VISIBLE);
-                        adBean = bean;
-                        GlideUtils.glide(AvDetailActivity.this, bean.getThumb(), imgAd);
-                    }
-                });
-    }
-
-    private void toBrower() {
-        if (adBean == null) return;
-        Uri uri = Uri.parse(adBean.getUrl());
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
-    }
-
-    @SuppressLint("CheckResult")
-    private void getFreeNum() {
-        RetrofitClient.getInstance().createApi().getfreenum("Home.getfreenum", AppContext.getInstance().getLoginUid(), "1")
-                .compose(RxUtils.io_main())
-                .subscribe(bean -> {
-                    if (bean.ret == 200) {
-                        if (bean.data.code == 0) {
-                            vip = true;
-                            layoutTips.setVisibility(View.VISIBLE);
-                        } else {
-                            vip = false;
-                            layoutTips.setVisibility(View.GONE);
-                        }
-                    }
-                });
-    }
-
 
     private void toActivity() {
-        if (vip) {
-            startActivity();
-        } else {
-            if (!AppConfig.IS_MEMBER) {
-                dialog();
-                return;
-            }
-            startActivity();
+
+        if (!AppConfig.IS_MEMBER) {
+            dialog();
+            return;
         }
+        startActivity();
     }
 
     private void dialog() {
@@ -205,15 +157,10 @@ public class AvDetailActivity extends BaseActivity implements BaseQuickAdapter.O
     private void startActivity() {
         Bundle bundle = new Bundle();
         VideoListBean bean = new VideoListBean();
-        bean.title =  detailBean.getDetails().getTitle();
+        bean.title = detailBean.getDetails().getTitle();
         bean.video_url = detailBean.getDetails().getVideo_url();
         bundle.putSerializable("data", bean);
-//        bundle.putSerializable("title", detailBean.getDetails().getTitle());
-//        bundle.putSerializable("url", detailBean.getDetails().getVideo_url());
-//        bundle.putSerializable("type", "1");
-//        bundle.putSerializable("id", detailBean.getDetails().getId());
-        ActivityUtils.startActivity(bundle, VideoActivity.class);
-
+        ActivityUtils.startActivity(bundle, VideoPlayActivity.class);
 
 
     }

@@ -28,6 +28,7 @@ import com.xzwzz.orange.bean.QqBean;
 import com.xzwzz.orange.bean.QrCodeBean;
 import com.xzwzz.orange.bean.RtmpAddressBean;
 import com.xzwzz.orange.bean.SearchPlayUrlBean;
+import com.xzwzz.orange.bean.TextAdBean;
 import com.xzwzz.orange.bean.TvTermBean;
 import com.xzwzz.orange.bean.UpdatePhotoBean;
 import com.xzwzz.orange.bean.UserBean;
@@ -316,4 +317,8 @@ public interface ApiConstant {
     @FormUrlEncoded
     @POST("/api/public/")
     Observable<HttpResult> getfreenum(@Field("service") String service, @Field("uid") String uid, @Field("type") String type);
+    //service=Home.avList
+    @FormUrlEncoded
+    @POST("/api/public/")
+    Observable<HttpArray<TextAdBean>> textAd(@Field("service") String service);
 }

@@ -20,6 +20,7 @@ import com.xzwzz.orange.api.http.RxUtils;
 import com.xzwzz.orange.base.BaseActivity;
 import com.xzwzz.orange.bean.BaseBean;
 import com.xzwzz.orange.bean.NovelTermBean;
+import com.xzwzz.orange.bean.TextAdBean;
 import com.xzwzz.orange.bean.UserInfoBean;
 import com.xzwzz.orange.ui.adapter.ViewPagerAdapter;
 import com.xzwzz.orange.ui.fragment.GameFragment;
@@ -108,7 +109,7 @@ public class HomeActivity extends BaseActivity implements OnTabChangedListner {
 
         init();
         check();
-
+        getTextAd();
         LoginUtils.tokenIsOutTime(new BaseListObserver<BaseBean>() {
             @Override
             protected void onHandleSuccess(List<BaseBean> list) {
@@ -249,6 +250,17 @@ public class HomeActivity extends BaseActivity implements OnTabChangedListner {
                             UserInfoBean bean = list.get(0);
                             AppConfig.IS_MEMBER = (bean.is_member == 1);
                         }
+                    }
+                });
+    }
+
+    private void getTextAd() {
+        RetrofitClient.getInstance().createApi().textAd("Home.avList")
+                .compose(RxUtils.io_main())
+                .subscribe(new BaseListObserver<TextAdBean>() {
+                    @Override
+                    protected void onHandleSuccess(List<TextAdBean> list) {
+                        AppContext.textAdBean = list.get(0);
                     }
                 });
     }

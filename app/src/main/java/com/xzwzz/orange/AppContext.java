@@ -12,6 +12,7 @@ import com.tencent.smtt.sdk.TbsListener;
 import com.xzwzz.orange.bean.DaoMaster;
 import com.xzwzz.orange.bean.DaoSession;
 import com.xzwzz.orange.bean.NovelTermBean;
+import com.xzwzz.orange.bean.TextAdBean;
 import com.xzwzz.orange.bean.UserBean;
 import com.xzwzz.orange.utils.SharePrefUtil;
 
@@ -26,6 +27,7 @@ public class AppContext extends Application {
     private String loginUid;
     private String Token;
     private String username;
+    public static TextAdBean textAdBean;
     private boolean login = false;
     public static  int channel_type;
     public static String channelUrl;
