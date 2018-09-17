@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".module.video.VideoPlayActivity">
 
-    <com.xzwzz.orange.widget.XzwzzPlayer
+    <com.aaaa.falas.widget.XzwzzPlayer
         android:id="@+id/videoplayer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

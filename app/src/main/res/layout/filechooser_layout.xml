@@ -8,13 +8,13 @@
         android:id="@+id/frame_web_video"></FrameLayout>
     
 
-    <com.xzwzz.orange.X5WebView
+    <com.aaaa.falas.X5WebView
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:id="@+id/web_filechooser">
         
         
-    </com.xzwzz.orange.X5WebView>
+    </com.aaaa.falas.X5WebView>
     
 
 </RelativeLayout>

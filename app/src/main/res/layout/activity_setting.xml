@@ -10,7 +10,7 @@
     android:padding="15dp"
     tools:context=".ui.SettingActivity">
 
-    <com.xzwzz.orange.widget.LineControlView
+    <com.aaaa.falas.widget.LineControlView
         android:id="@+id/reset_setting"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -26,7 +26,7 @@
     <!--android:background="@color/text_gray3"-->
     <!--/>-->
 
-    <com.xzwzz.orange.widget.LineControlView
+    <com.aaaa.falas.widget.LineControlView
         android:id="@+id/checklastet_setting"
         android:layout_width="match_parent"
         android:layout_height="48dp"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context="com.xzwzz.orange.ui.VipActivity">
+    tools:context="com.aaaa.falas.ui.VipActivity">
 
     <include layout="@layout/layout_title"/>
 

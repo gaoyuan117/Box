@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
-    tools:context="com.xzwzz.orange.ui.PlayTvActivity">
+    tools:context="com.aaaa.falas.ui.PlayTvActivity">
 
 
     <tv.danmaku.ijk.media.player.custom.IjkVideoView

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    tools:context="com.xzwzz.orange.ui.NovelActivity">
+    tools:context="com.aaaa.falas.ui.NovelActivity">
 
     <include layout="@layout/layout_title"/>
 

@@ -11,9 +11,9 @@
     <include layout="@layout/layout_title" />
 
     <LinearLayout
-        android:layout_marginLeft="4dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginLeft="4dp"
         android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -37,15 +37,15 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginLeft="4dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginLeft="4dp"
         android:layout_marginTop="1dp"
         android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingLeft="10dp"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -66,10 +66,10 @@
 
 
         <TextView
-            android:layout_marginRight="10dp"
             android:id="@+id/btn_phone_login_send_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:background="@drawable/broder_main_color"
             android:gravity="center"
             android:padding="5dp"
@@ -80,9 +80,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginLeft="4dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginLeft="4dp"
         android:layout_marginTop="1dp"
         android:background="@color/white"
         android:gravity="center_vertical"
@@ -137,9 +137,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginLeft="4dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginLeft="4dp"
         android:layout_marginTop="1dp"
         android:background="@color/white"
         android:gravity="center_vertical"
@@ -165,9 +165,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginLeft="4dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_marginLeft="4dp"
         android:layout_marginTop="1dp"
         android:background="@color/white"
         android:gravity="center_vertical"
@@ -207,6 +207,14 @@
             android:textColor="@color/text_blue"
             android:textSize="16sp" />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="每部手机只能注册三个账号哦~"
+        android:textColor="@color/main_color"
+        android:textSize="12sp" />
 
 
     <Button

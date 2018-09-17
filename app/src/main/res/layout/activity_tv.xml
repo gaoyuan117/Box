@@ -5,11 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.xzwzz.orange.ui.TvActivity">
+    tools:context="com.aaaa.falas.ui.TvActivity">
 
     <include layout="@layout/layout_title" android:id="@+id/title"/>
 
-    <com.xzwzz.orange.widget.ViewStatusManager
+    <com.aaaa.falas.widget.ViewStatusManager
         android:layout_below="@+id/title"
         android:id="@+id/view_statusmanager"
         android:layout_width="match_parent"
@@ -41,7 +41,7 @@
                 android:background="@color/white"
                 android:scrollbars="none"/>
         </LinearLayout>
-    </com.xzwzz.orange.widget.ViewStatusManager>
+    </com.aaaa.falas.widget.ViewStatusManager>
 
     <View
         android:layout_width="match_parent"

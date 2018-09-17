@@ -105,9 +105,10 @@
     public static <fields>;
 }
 
--keep class com.xzwzz.orange.api.http.**{*;}
--keep class com.xzwzz.orange.bean.**{*;}
--keep class com.xzwzz.orange.AppContext{*;}
+-keep class com.aaaa.falas.api.http.**{*;}
+-keep class com.aaaa.falas.bean.**{*;}
+-keep class com.aaaa.falas.AppContext{*;}
+
 
 
 -keepclassmembers class * {

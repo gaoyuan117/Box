@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <com.xzwzz.orange.widget.NoScrollViewPager
+    <com.aaaa.falas.widget.NoScrollViewPager
         android:id="@+id/viewpager_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
 
-    <com.xzwzz.orange.widget.CustomBottomNavigationView
+    <com.aaaa.falas.widget.CustomBottomNavigationView
         android:id="@+id/navigation_main"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"

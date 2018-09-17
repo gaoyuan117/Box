@@ -21,7 +21,7 @@
         android:showDividers="middle"
         >
 
-        <com.xzwzz.orange.widget.LineControlView
+        <com.aaaa.falas.widget.LineControlView
             android:id="@+id/cv_avatar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -30,7 +30,7 @@
             app:title="头像"
             />
 
-        <com.xzwzz.orange.widget.LineControlView
+        <com.aaaa.falas.widget.LineControlView
             android:id="@+id/cv_username"
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -38,7 +38,7 @@
             app:title="昵称"
             />
 
-        <com.xzwzz.orange.widget.LineControlView
+        <com.aaaa.falas.widget.LineControlView
             android:id="@+id/cv_signature"
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -46,7 +46,7 @@
             app:title="签名"
             />
 
-        <com.xzwzz.orange.widget.LineControlView
+        <com.aaaa.falas.widget.LineControlView
             android:id="@+id/cv_birthday"
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -54,7 +54,7 @@
             app:title="生日"
             />
 
-        <com.xzwzz.orange.widget.LineControlView
+        <com.aaaa.falas.widget.LineControlView
             android:id="@+id/cv_sex"
             android:layout_width="match_parent"
             android:layout_height="56dp"

@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     android:background="#f1f1f1"
     android:orientation="vertical"
-    tools:context="com.xzwzz.orange.ui.VipActivity">
+    tools:context="com.aaaa.falas.ui.VipActivity">
 
     <include layout="@layout/layout_title" />
 
-    <com.xzwzz.orange.widget.RoundLayout
+    <com.aaaa.falas.widget.RoundLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -42,7 +42,7 @@
             android:hint="请输入卡密"
             android:textSize="14sp" />
 
-    </com.xzwzz.orange.widget.RoundLayout>
+    </com.aaaa.falas.widget.RoundLayout>
 
 
     <Button

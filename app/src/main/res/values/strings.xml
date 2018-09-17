@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Box</string>
+    <string name="app_name">安卓</string>
 
-    //openinstall的key
     <string name="openinstall_key">bs814u</string>
+
+
 </resources>

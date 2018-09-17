@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.xzwzz.orange.X5WebView
+    <com.aaaa.falas.X5WebView
         android:id="@+id/x5_webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
